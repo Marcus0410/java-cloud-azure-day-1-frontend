@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { GolfContext } from "../App"
+import TournamentsListItem from "./TournamentsListItem"
 
 export default function TournamentsList() {
     const context = useContext(GolfContext)
@@ -9,7 +10,7 @@ export default function TournamentsList() {
             <h2>Tournaments:</h2>
             <ul>
             {tournaments.map((tournament) =>
-                <li key={tournament.id}>{tournament.title}</li>
+                <TournamentsListItem key={tournament.id} tournament={tournament} />
             )}
             </ul>
         </div>
