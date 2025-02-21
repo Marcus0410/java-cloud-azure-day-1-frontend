@@ -25,7 +25,7 @@ export default function NewPlayerForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Player added:", data);
+        context.setPlayers([...context.players, data])
         navigate("/");
       })
       .catch((error) => console.error("Error adding player:", error));

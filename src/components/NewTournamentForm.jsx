@@ -24,7 +24,7 @@ export default function NewTournamentForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Tournament added:", data);
+        context.setTournaments([...context.tournaments, data])
         navigate("/");
       })
       .catch((error) => console.error("Error adding tournament:", error));
